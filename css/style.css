@@ -1,5 +1,53 @@
+/* importimi i fonteve */
+@font-face {
+  font-family: whitney;
+  src: url('/fonts/whitneysemibold.woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: whitneyLight;
+  src: url('/fonts/whitneylight.woff');
+  font-weight: light;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* fillon pjesa e navbar dhe hero */
+.hero{
+  background-image: url('/img/hero.png');
+  background-size: cover;
+  height: 85vh;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  font-family: whitney, sans-serif;
+  color: #fff;
+}
+
+.items ul{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  list-style-type: none;
+}
+
+.items a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.buttons button{
+  border: none;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+/* mbaron pjesa e navbar dhe hero */
