@@ -11,6 +11,11 @@
   font-weight: light;
 }
 
+@font-face {
+  font-family: whitneyBold;
+  src: url('/fonts/whitneybold.woff');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +26,7 @@
 .hero{
   background-image: url('/img/hero.png');
   background-size: cover;
-  height: 85vh;
+  height: 83.5vh;
 }
 
 .navbar{
@@ -50,4 +55,69 @@
   border-radius: 15px;
   padding: 10px 15px;
 }
-/* mbaron pjesa e navbar dhe hero */
+
+.content {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  /* Hapsira mes permbajtjes ne hero */
+  gap: 35px; 
+}
+
+.content h1{
+  font-size: 68px;
+  font-family: whitneyBold;
+  font-weight: bold;
+}
+
+.content h4{
+  font-family: whitneyLight;
+  font-size: 20px;
+  line-height: 1.625;
+}
+
+.windows{
+  border-radius: 28px;
+  font-size: 20px;
+  padding: 16px 32px;
+  border: none;
+  margin-right: 20px;
+  color: #23272A;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  transition: color 0.3s, box-shadow 0.3s;
+}
+
+.windows:hover {
+  color: #5865F2;
+  box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.53);
+}
+
+.browser{
+  border-radius: 28px;
+  font-size: 20px;
+  padding: 16px 32px;
+  border: none;
+  background-color: #23272A;
+  color: #fff;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  transition: color 0.3s, box-shadow 0.3s;
+}
+
+.browser:hover {
+  box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.53);
+}
+
+.login{
+  background-color: #fff;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  transition: color 0.3s, box-shadow 0.3s;
+}
+
+.login:hover{
+    color: #5865F2;
+    box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.53);
+}
