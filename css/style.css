@@ -24,7 +24,7 @@
 
 /* fillon pjesa e navbar dhe hero */
 .hero{
-  background-image: url('/img/hero.png');
+  background-image: url('../img/hero.png');
   background-size: cover;
   height: 83.5vh;
 }
@@ -65,7 +65,7 @@
   align-items: center;
   height: 100%; 
   /* Hapsira mes permbajtjes ne hero */
-  gap: 35px; 
+  gap: 35px;
 }
 
 .content h1{
@@ -120,4 +120,36 @@
 .login:hover{
     color: #5865F2;
     box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.53);
+}
+
+/* Pjesa e sections te webfaqes */
+.container-section{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section1-content{
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 81vh;
+}
+
+.section1-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #23272A;
+}
+
+.section1-text h2{
+  font-family: whitneyBold;
+  font-size: 48px;
+}
+
+.section1-text h4{
+  font-family: whitneyLight;
+  line-height: 1.625;
+  font-size: 20px;
 }
