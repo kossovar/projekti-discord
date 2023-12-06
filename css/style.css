@@ -1,19 +1,19 @@
 /* importimi i fonteve */
 @font-face {
   font-family: whitney;
-  src: url('/fonts/whitneysemibold.woff');
+  src: url('../fonts/whitneysemibold.woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: whitneyLight;
-  src: url('/fonts/whitneylight.woff');
+  src: url('../fonts/whitneylight.woff');
   font-weight: light;
 }
 
 @font-face {
   font-family: whitneyBold;
-  src: url('/fonts/whitneybold.woff');
+  src: url('../fonts/whitneybold.woff');
 }
 
 * {
