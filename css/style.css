@@ -153,3 +153,56 @@
   line-height: 1.625;
   font-size: 20px;
 }
+
+.section2-content{
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 81vh;
+}
+
+.section2-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #23272A;
+}
+
+.section2-text h2{
+  font-family: whitneyBold;
+  font-size: 48px;
+}
+
+.section2-text h4{
+  font-family: whitneyLight;
+  line-height: 1.625;
+  font-size: 20px;
+}
+
+.section3-content{
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 81vh;
+}
+
+.section3-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #23272A;
+}
+
+.section3-text h2{
+  font-family: whitneyBold;
+  font-size: 48px;
+}
+
+.section3-text h4{
+  font-family: whitneyLight;
+  line-height: 1.625;
+  font-size: 20px;
+}
