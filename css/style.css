@@ -218,6 +218,7 @@
   flex-direction: column;
   text-align: center;
   margin-bottom: 50px;
+  color: #23272A;
 }
 
 .section4-text h1{
@@ -249,5 +250,56 @@
 
 .section4-content button:hover {
   box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.13);
-  
 }
+
+/* styling per pjesen e footer */
+.footer-container{
+  height: 90vh;
+  background-color: #23272A;
+}
+
+.footer-content{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 70px;
+  color: #fff;
+  font-size: 17px;
+  font-family: whitneyLight;
+  line-height: 35px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+footer ul{
+  list-style-type: none;
+}
+
+footer p{
+  color: #5865F2;
+  padding-bottom: 20px;
+}
+
+.social i{
+  padding-right: 20px;
+}
+
+.bottom{
+  padding-top: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom button{
+  border-radius: 40px;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  background-color: #5865F2;
+  color: #fff;
+  font-family: whitney;
+}
+/* styling per pjesen e footer mbaron */
