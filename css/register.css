@@ -1,0 +1,122 @@
+/* importimi i fonteve */
+@font-face {
+  font-family: whitney;
+  src: url('../fonts/whitneysemibold.woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: whitneyLight;
+  src: url('../fonts/whitneylight.woff');
+  font-weight: light;
+}
+
+@font-face {
+  font-family: whitneyBold;
+  src: url('../fonts/whitneybold.woff');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../img/login-image.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 500px;
+  /* height: 420px; */
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0. 0.1);
+  text-align: center;
+  background-color: #313338;
+  font-family: whitney;
+}
+
+.login-box a{
+  text-decoration: none;
+  color: #5865f2;
+}
+
+.login-box input{
+  height: 30px;
+  width: 90%;
+  background-color: #1E1F22;
+  color: #aaa;
+  border: none;
+}
+
+.login-box h2 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.login-box p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #aaa;
+}
+
+.login-box .input-group {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #B5BAC1;
+  text-align: left;
+  padding: 20px 20px 5px 20px;
+  font-size: smaller;
+
+}
+
+.forgot-password {
+  text-align: left;
+  padding: 0px 20px 5px 20px;
+  font-size: smaller;
+}
+
+.register{
+  text-align: left;
+  padding: 0px 20px 5px 20px;
+  font-size: smaller;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.login-box button {
+  margin: 10px;
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5865F2;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: medium;
+}
