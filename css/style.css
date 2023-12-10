@@ -16,6 +16,17 @@
   src: url('../fonts/whitneybold.woff');
 }
 
+
+@font-face{
+  font-family: gintoNord;
+  src: url('../fonts/ABCGintoNord-Ultra-Trial-BF651b7b783d44c.otf');
+}
+
+@font-face {
+  font-family: gintoSemiBold;
+  src: url('../fonts/ABCGintoNord-Bold-Trial-BF651b7b7670e10.otf');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -74,8 +85,8 @@
 }
 
 .content h1{
-  font-size: 68px;
-  font-family: whitneyBold;
+  font-size: 56px;
+  font-family: gintoSemiBold;
   font-weight: bold;
 }
 
@@ -222,7 +233,7 @@
 }
 
 .section4-text h1{
-  font-family: whitneyBold;
+  font-family: gintoSemiBold;
   font-size: 46px;
   margin-bottom: 20px;
 }
@@ -278,6 +289,12 @@ footer ul{
 footer p{
   color: #5865F2;
   padding-bottom: 20px;
+}
+
+footer h1{
+  font-family: gintoSemiBold;
+  color: #5865F2;
+  margin-bottom: 15px;
 }
 
 .social i{
