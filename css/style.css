@@ -319,4 +319,9 @@ footer h1{
   color: #fff;
   font-family: whitney;
 }
+
+footer button a{
+  text-decoration: none;
+  color: inherit;
+}
 /* styling per pjesen e footer mbaron */
