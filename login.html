@@ -6,18 +6,21 @@
     <link rel="stylesheet" href="css/loginstyle.css">
     <title>Discord</title>
     <link rel="icon" type="image/x-icon" href="./img/discord-round-color-icon.webp">
+    <script defer src="./js/main.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="login-box">
-            <form class="login-form">
+            <form class="login-form" id="login">
                 <h2>Welcome back!</h2>
                 <p>We're so excited to see you again!</p>
                 <div class="input-group">
                     <label for="email">EMAIL OR PHONE NUMBER *</label>
                     <input type="text" id="email">
+                    <div class="errorEmail" id="errorEmail"></div>
                     <label for="password">PASSWORD *</label>
-                    <input type="password" ID="password">
+                    <input type="password" id="password">
+                    <div class="errorPassword" id="errorPassword"></div>
                 </div>
                <div class="forgot-password">
                 <a href="#">Forgot your password?</a>

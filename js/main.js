@@ -54,6 +54,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return true;
   }
+
+  function loginValidation(event) {
+    event.preventDefault();
+
+    let email = document.getElementById('email');
+    let errorEmail = document.getElementById('errorEmail');
   
-  document.getElementById('forma').addEventListener('submit', validimi);
+    let password = document.getElementById('password');
+    let errorPassword = document.getElementById('errorPassword');
+
+    errorEmail.innerText = '';
+    errorPassword.innerText = '';
+
+    
+    if (!emailRegex.test(email.value)) {
+      errorEmail.innerText = "Invalid email";
+      errorEmail.style.color = "#C70039";
+      return false;
+    }
+
+    if (!passwordRegex.test(password.value)) {
+      errorPassword.innerText = "Invalid password";
+      errorPassword.style.color = "#C70039";
+      return false;
+
+    }
+  }
+  if (document.getElementById('forma')) {
+    document.getElementById('forma').addEventListener('submit', validimi);
+  }
+  if (document.getElementById('login')) {
+    document.getElementById('login').addEventListener('submit', loginValidation)
+  }
 });
