@@ -88,3 +88,26 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('login').addEventListener('submit', loginValidation)
   }
 });
+
+// pjesa e butonit hamburger per responsivity
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const closeIcon = document.querySelector(".close-menu");
+
+hamburger.addEventListener("click", () => {
+  ndryshoMenu();
+});
+
+closeIcon.addEventListener("click", () => {
+  ndryshoMenu();
+});
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+  ndryshoMenu();
+}));
+
+function ndryshoMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+
