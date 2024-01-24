@@ -29,12 +29,12 @@ body {
   background-color: #313338;
 }
 
-.login-box a{
+.login-box a {
   text-decoration: none;
   color: #5865f2;
 }
 
-.login-box input{
+.login-box input {
   height: 30px;
   width: 90%;
   background-color: #1E1F22;
@@ -75,7 +75,7 @@ body {
   font-size: smaller;
 }
 
-.register{
+.register {
   text-align: left;
   padding: 0px 20px 5px 20px;
   font-size: smaller;
@@ -99,11 +99,12 @@ body {
 /* Responsive - sm breakpoint */
 @media screen and (max-width: 640px) {
   .login-box {
-      width: 100%;
-      margin: 0 15px;
-      padding: 15px;
+    width: 100%;
+    margin: 0 15px;
+    padding: 15px;
   }
+
   .login-box input {
-      height: 36px;
+    height: 36px;
   }
 }

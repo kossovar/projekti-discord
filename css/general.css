@@ -66,7 +66,9 @@ h5 {
     font-weight: 500;
 }
 
-a, button, input {
+a,
+button,
+input {
     font-family: Whitney;
     font-weight: 400;
 }
@@ -103,11 +105,13 @@ a, button, input {
     padding: 10px 15px;
 }
 
-.logo-mobile, .login-mobile, .hamburger {
+.logo-mobile,
+.login-mobile,
+.hamburger {
     display: none;
 }
 
-.hamburger .bar{
+.hamburger .bar {
     display: block;
     width: 25px;
     height: 3px;
@@ -115,7 +119,7 @@ a, button, input {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #fff;
-  }
+}
 
 /* Footer */
 footer h1 {
@@ -231,7 +235,7 @@ footer button a {
         background-color: #fff;
         transition: all 0.2s ease-in-out;
         color: #000;
-        box-shadow: -5px 0px 20px -3px rgba(0,0,0,0.3);
+        box-shadow: -5px 0px 20px -3px rgba(0, 0, 0, 0.3);
     }
 
     .footer-container {
@@ -299,8 +303,7 @@ footer button a {
 }
 
 /* Responsive - md breakpoint */
-@media screen and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
 
 /* Responsive - lg breakpoint */
 @media screen and (max-width: 1024px) {}

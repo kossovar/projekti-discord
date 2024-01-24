@@ -18,7 +18,7 @@ body {
     height: 100vh;
     width: 100%;
 }
- 
+
 .login-box {
     width: 500px;
     height: 420px;
@@ -31,12 +31,12 @@ body {
     font-family: Whitney;
 }
 
-.login-box a{
+.login-box a {
     text-decoration: none;
     color: #5865f2;
 }
 
-.login-box input{
+.login-box input {
     height: 30px;
     width: 90%;
     background-color: #1E1F22;
@@ -77,7 +77,7 @@ body {
     font-size: smaller;
 }
 
-.register{
+.register {
     text-align: left;
     padding: 0px 20px 5px 20px;
     font-size: smaller;
@@ -97,6 +97,7 @@ body {
     transition: background-color 0.3s ease;
     font-size: medium;
 }
+
 /* Responsive - sm breakpoint */
 @media screen and (max-width: 640px) {
     .login-box {
@@ -104,6 +105,7 @@ body {
         margin: 0 15px;
         padding: 15px;
     }
+
     .login-box input {
         height: 36px;
     }

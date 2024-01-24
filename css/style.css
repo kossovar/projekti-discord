@@ -1,5 +1,5 @@
 /* fillon pjesa e navbar dhe hero */
-.hero{
+.hero {
   background-image: url('../img/hero.png');
   background-size: cover;
   background-position: center;
@@ -13,25 +13,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%; 
+  height: 100%;
   /* Hapsira mes permbajtjes ne hero */
   gap: 35px;
 }
 
-.content h1{
+.content h1 {
   font-size: 56px;
   font-family: Ginto;
   font-weight: bold;
 }
 
-.content h4{
+.content h4 {
   font-family: Whitney;
   font-weight: 300;
   font-size: 20px;
   line-height: 1.625;
 }
 
-.windows{
+.windows {
   border-radius: 28px;
   font-size: 20px;
   font-family: Whitney;
@@ -39,48 +39,48 @@
   border: none;
   margin-right: 20px;
   color: #23272A;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   transition: color 0.3s, box-shadow 0.3s;
 }
 
 .windows:hover {
   color: #5865F2;
-  box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.53);
+  box-shadow: -1px 22px 41px -10px rgba(0, 0, 0, 0.53);
 }
 
-.browser{
+.browser {
   border-radius: 28px;
   font-size: 20px;
   padding: 16px 32px;
   border: none;
   background-color: #23272A;
   color: #fff;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   transition: color 0.3s, box-shadow 0.3s;
 }
 
 .browser:hover {
-  box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.53);
+  box-shadow: -1px 22px 41px -10px rgba(0, 0, 0, 0.53);
 }
 
-.login{
+.login {
   background-color: #fff;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   transition: color 0.3s, box-shadow 0.3s;
 }
 
-.login:hover{
-    color: #5865F2;
-    box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.53);
+.login:hover {
+  color: #5865F2;
+  box-shadow: -1px 22px 41px -10px rgba(0, 0, 0, 0.53);
 }
 
 /* Pjesa e sections te webfaqes */
-.container-section{
+.container-section {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.section1-content{
+.section1-content {
   margin-top: 90px;
   display: flex;
   align-items: center;
@@ -89,27 +89,27 @@
   flex-direction: row;
 }
 
-.section1-text{
+.section1-text {
   display: flex;
   flex-direction: column;
   gap: 20px;
   color: #23272A;
 }
 
-.section1-text h2{
+.section1-text h2 {
   font-family: Whitney;
   font-weight: bold;
   font-size: 48px;
 }
 
-.section1-text h4{
+.section1-text h4 {
   font-family: Whitney;
   font-weight: 300;
   line-height: 1.625;
   font-size: 20px;
 }
 
-.section2-content{
+.section2-content {
   margin-top: 50px;
   display: flex;
   align-items: center;
@@ -117,25 +117,25 @@
   height: 81vh;
 }
 
-.section2-text{
+.section2-text {
   display: flex;
   flex-direction: column;
   gap: 20px;
   color: #23272A;
 }
 
-.section2-text h2{
+.section2-text h2 {
   font-weight: 700;
   font-size: 48px;
 }
 
-.section2-text h4{
+.section2-text h4 {
   font-weight: 300;
   line-height: 1.625;
   font-size: 20px;
 }
 
-.section3-content{
+.section3-content {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
@@ -144,25 +144,25 @@
   height: 81vh;
 }
 
-.section3-text{
+.section3-text {
   display: flex;
   flex-direction: column;
   gap: 20px;
   color: #23272A;
 }
 
-.section3-text h2{
+.section3-text h2 {
   font-weight: 700;
   font-size: 48px;
 }
 
-.section3-text h4{
+.section3-text h4 {
   font-weight: 300;
   line-height: 1.625;
   font-size: 20px;
 }
 
-.section4-content{
+.section4-content {
   margin-top: 80px;
   display: flex;
   flex-direction: column;
@@ -171,25 +171,25 @@
   color: #23272A;
 }
 
-.section4-text h1{
+.section4-text h1 {
   font-family: Ginto;
   font-weight: 700;
   font-size: 46px;
   margin-bottom: 20px;
 }
 
-.section4-text h4{
+.section4-text h4 {
   font-weight: 300;
   font-size: 20px;
 }
 
-.section4-content h2{
+.section4-content h2 {
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 25px;
 }
 
-.section4-content button{
+.section4-content button {
   border: none;
   border-radius: 28px;
   padding: 16px 32px;
@@ -200,18 +200,20 @@
 }
 
 .section4-content button:hover {
-  box-shadow: -1px 22px 41px -10px rgba(0,0,0,0.13);
+  box-shadow: -1px 22px 41px -10px rgba(0, 0, 0, 0.13);
 }
 
 .section4-other img {
   width: 100%;
 }
+
 /* styling per responsiveness  */
 
 /* MEDIA QUERY PER MOBILE NE GJERESI 320px */
 @media screen and (max-width: 320px) {
+
   /* responsive navigation styling */
-  .hero{
+  .hero {
     max-width: 100%;
   }
 
@@ -222,7 +224,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    height: 100%; 
+    height: 100%;
     padding-top: 50px;
     padding-left: 35px;
     max-width: 100%;
@@ -230,50 +232,50 @@
     gap: 35px;
   }
 
-  .windows{
+  .windows {
     margin-bottom: 15px;
   }
 
-  .windows{
+  .windows {
     border-radius: 28px;
     font-size: 14px;
     padding: 16px 32px;
     border: none;
     margin-right: 20px;
     color: #23272A;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     transition: color 0.3s, box-shadow 0.3s;
   }
 
-  .browser{
+  .browser {
     border-radius: 28px;
     font-size: 14px;
     padding: 16px 32px;
     border: none;
     background-color: #23272A;
     color: #fff;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     transition: color 0.3s, box-shadow 0.3s;
   }
 
-  .container-section{
+  .container-section {
     margin: 0px 20px;
   }
-  
-  .container-section img{
+
+  .container-section img {
     height: 25vh;
     width: 100%;
   }
 
-  .container-section br{
+  .container-section br {
     display: none;
   }
 
-  .container-section h2{
+  .container-section h2 {
     font-size: 1.5em;
   }
 
-  .container-section h4{
+  .container-section h4 {
     font-size: 14px;
   }
 
@@ -300,7 +302,7 @@
 
   .section2-content img {
     width: 100%;
-    order: -1; 
+    order: -1;
   }
 
   .section3-content {
@@ -328,13 +330,13 @@
     width: 100%;
   }
 
-  .section4-text h1{
+  .section4-text h1 {
     font-size: 20px;
     text-align: left;
     max-width: 100%;
   }
 
-  .section4-text h4{
+  .section4-text h4 {
     font-size: 16px;
     text-align: left;
     max-width: 100%;
@@ -344,8 +346,9 @@
 
 /* MEDIA QUERY PER MOBILE NE GJERESI 480px */
 @media screen and (max-width: 480px) {
+
   /* responsive navigation styling */
-  .hero{
+  .hero {
     max-width: 100%;
   }
 
@@ -356,7 +359,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    height: 100%; 
+    height: 100%;
     padding-top: 50px;
     padding-left: 35px;
     max-width: 100%;
@@ -364,50 +367,50 @@
     gap: 35px;
   }
 
-  .windows{
+  .windows {
     margin-bottom: 15px;
   }
 
-  .windows{
+  .windows {
     border-radius: 28px;
     font-size: 14px;
     padding: 16px 32px;
     border: none;
     margin-right: 20px;
     color: #23272A;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     transition: color 0.3s, box-shadow 0.3s;
   }
 
-  .browser{
+  .browser {
     border-radius: 28px;
     font-size: 14px;
     padding: 16px 32px;
     border: none;
     background-color: #23272A;
     color: #fff;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     transition: color 0.3s, box-shadow 0.3s;
   }
 
-  .container-section{
+  .container-section {
     margin: 0px 20px;
   }
-  
-  .container-section img{
+
+  .container-section img {
     height: 25vh;
     width: 100%;
   }
 
-  .container-section br{
+  .container-section br {
     display: none;
   }
 
-  .container-section h2{
+  .container-section h2 {
     font-size: 1.5em;
   }
 
-  .container-section h4{
+  .container-section h4 {
     font-size: 14px;
   }
 
@@ -434,7 +437,7 @@
 
   .section2-content img {
     width: 100%;
-    order: -1; 
+    order: -1;
   }
 
   .section3-content {
@@ -462,13 +465,13 @@
     width: 100%;
   }
 
-  .section4-text h1{
+  .section4-text h1 {
     font-size: 20px;
     text-align: left;
     max-width: 100%;
   }
 
-  .section4-text h4{
+  .section4-text h4 {
     font-size: 16px;
     text-align: left;
     max-width: 100%;
@@ -478,27 +481,28 @@
 
 /* MEDIA QUERY PER MOBILE NE GJERESI 768px */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+
   /* responsive navigation styling */
-  .hero{
+  .hero {
     max-width: 100%;
     height: 100vh;
   }
 
-  .hero h1{
+  .hero h1 {
     font-size: 24px;
   }
 
-  .hero h4{
+  .hero h4 {
     font-size: 16px;
     max-width: 80%;
   }
 
-  .content-buttons{
+  .content-buttons {
     display: flex;
     flex-direction: column;
   }
 
-  .login{
+  .login {
     display: none;
   }
 
@@ -509,7 +513,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    height: 100%; 
+    height: 100%;
     padding-top: 50px;
     padding-left: 35px;
     max-width: 100%;
@@ -517,50 +521,50 @@
     gap: 35px;
   }
 
-  .windows{
+  .windows {
     margin-bottom: 15px;
   }
 
-  .windows{
+  .windows {
     border-radius: 28px;
     font-size: 20px;
     padding: 16px 32px;
     border: none;
     margin-right: 20px;
     color: #23272A;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     transition: color 0.3s, box-shadow 0.3s;
   }
 
-  .browser{
+  .browser {
     border-radius: 28px;
     font-size: 20px;
     padding: 16px 32px;
     border: none;
     background-color: #23272A;
     color: #fff;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     transition: color 0.3s, box-shadow 0.3s;
   }
 
-  .container-section{
+  .container-section {
     margin: 0px 20px;
   }
-  
-  .container-section img{
+
+  .container-section img {
     height: 40vh;
     width: 100%;
   }
 
-  .container-section br{
+  .container-section br {
     display: none;
   }
 
-  .container-section h2{
+  .container-section h2 {
     font-size: 20px;
   }
 
-  .container-section h4{
+  .container-section h4 {
     font-size: 16px;
   }
 
@@ -587,7 +591,7 @@
     margin-bottom: 50px;
   }
 
-  .section2-content img{
+  .section2-content img {
     order: -1;
   }
 
@@ -617,13 +621,13 @@
     width: 100%;
   }
 
-  .section4-text h1{
+  .section4-text h1 {
     font-size: 30px;
     text-align: center;
     max-width: 100%;
   }
 
-  .section4-text h4{
+  .section4-text h4 {
     font-size: 16px;
     text-align: center;
     max-width: 100%;
