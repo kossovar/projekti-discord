@@ -330,6 +330,7 @@ hr{
   margin: 30px auto;
   border-color: #5865F2;
 }
+
 /* styling per pjesen e footer mbaron */
 
 @media screen and (max-width: 320px){
@@ -581,7 +582,6 @@ hr{
     border-color: #5865F2;
   }
 }
-
 
 @media screen and (max-width: 480px){
   .navbar ul{
