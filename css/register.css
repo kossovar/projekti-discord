@@ -1,27 +1,3 @@
-/* importimi i fonteve */
-@font-face {
-  font-family: whitney;
-  src: url('../fonts/whitneysemibold.woff');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: whitneyLight;
-  src: url('../fonts/whitneylight.woff');
-  font-weight: light;
-}
-
-@font-face {
-  font-family: whitneyBold;
-  src: url('../fonts/whitneybold.woff');
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   background-image: url('../img/login-image.svg');
   background-repeat: no-repeat;
@@ -51,15 +27,14 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0. 0.1);
   text-align: center;
   background-color: #313338;
-  font-family: whitney;
 }
 
-.login-box a{
+.login-box a {
   text-decoration: none;
   color: #5865f2;
 }
 
-.login-box input{
+.login-box input {
   height: 30px;
   width: 90%;
   background-color: #1E1F22;
@@ -100,7 +75,7 @@ body {
   font-size: smaller;
 }
 
-.register{
+.register {
   text-align: left;
   padding: 0px 20px 5px 20px;
   font-size: smaller;
@@ -119,4 +94,17 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: medium;
+}
+
+/* Responsive - sm breakpoint */
+@media screen and (max-width: 640px) {
+  .login-box {
+    width: 100%;
+    margin: 0 15px;
+    padding: 15px;
+  }
+
+  .login-box input {
+    height: 36px;
+  }
 }
