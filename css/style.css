@@ -236,6 +236,10 @@
     gap: 35px;
   }
 
+  .content h1 {
+    font-size: 24px;
+  }
+
   .windows {
     margin-bottom: 15px;
   }
@@ -369,6 +373,10 @@
     max-width: 100%;
     /* Hapsira mes permbajtjes ne hero */
     gap: 35px;
+  }
+
+  .content h1 {
+    font-size: 24px;
   }
 
   .windows {

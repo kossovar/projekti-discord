@@ -145,6 +145,10 @@ footer h1 {
     justify-content: space-around;
 }
 
+.footer-content .social .icons {
+    padding: 40px 0px;
+}
+
 footer ul {
     list-style-type: none;
 }
@@ -261,10 +265,11 @@ footer button a {
     }
 
     .icons {
-        padding: 40px 0px;
+        padding: 20px 0px;
     }
 
     .footer-content {
+        padding-top: 24px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -273,6 +278,12 @@ footer button a {
     .footer-content>div {
         width: auto;
         margin-bottom: 0;
+    }
+
+    .social {
+        grid-column: span 2;
+        margin-bottom: 24px;
+    
     }
 
     .bottom {
@@ -302,10 +313,38 @@ footer button a {
 }
 
 /* Responsive - md breakpoint */
-@media screen and (max-width: 768px) {}
+@media screen and (min-width: 641px) and (max-width: 768px) {
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+        
+}
+
+/* Responsive - md breakpoint */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .footer-content .social {
+        grid-column: span 1;
+        margin-bottom: 0;
+    }
+
+    .footer-content .three {
+        grid-column-start: 2;
+    }
+        
+}
 
 /* Responsive - lg breakpoint */
-@media screen and (max-width: 1024px) {}
+@media screen and (min-width: 1024px) {
 
-/* Responsive - xl breakpoint */
-@media screen and (max-width: 1280px) {}
+    .footer-content {
+        display: flex;
+    }
+        
+}
