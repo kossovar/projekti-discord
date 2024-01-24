@@ -74,7 +74,7 @@
 /* pjesa e video section */
 .video-section {
   width: 100%;
-  margin-top: 250px;
+  margin-top: 200px;
   margin-bottom: 100px;
   font-family: Ginto;
   color: #23272A;
@@ -294,7 +294,6 @@
   }
 }
 
-
 @media screen and (max-width: 480px) {
 
   .content img {
@@ -355,7 +354,7 @@
   .video-section {
     width: 90%;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 200px;
     margin-bottom: 50px;
     font-family: Ginto;
     color: #23272A;
