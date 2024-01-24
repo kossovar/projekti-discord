@@ -66,6 +66,11 @@ h5 {
     font-weight: 500;
 }
 
+a, button, input {
+    font-family: Whitney;
+    font-weight: 400;
+}
+
 /* Navigation */
 .navbar {
     display: flex;
@@ -113,6 +118,11 @@ h5 {
   }
 
 /* Footer */
+footer h1 {
+    font-family: Ginto;
+    margin-bottom: 12px;
+}
+
 .footer-container {
     height: 100%;
     padding: 0 15px;
@@ -147,6 +157,7 @@ footer p {
 
 .footer-bottom {
     padding: 26px 15px 30px;
+    background-color: #23272A;
     border-top: 1px solid #5865F2;
     margin: 0 auto;
     display: flex;
