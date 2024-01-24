@@ -21,7 +21,7 @@
 .content h1 {
   font-size: 56px;
   font-family: Ginto;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .content h4 {
@@ -201,6 +201,10 @@
 
 .section4-content button:hover {
   box-shadow: -1px 22px 41px -10px rgba(0, 0, 0, 0.13);
+}
+
+.section4-other {
+  margin-bottom: -76px;
 }
 
 .section4-other img {
