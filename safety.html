@@ -5,26 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/safety.css">
   <script defer src="https://kit.fontawesome.com/473661cbea.js" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
   <title>Discord Safety Center</title>
 </head>
 <body>
   <div class="hero">
-    <div class="navbar">
+    <nav class="navbar">
       <div class="logo">
         <a href="index.html"><img src="./img/logo.png" alt="Logo e Discord" width="124" height="34"></a>
       </div>
       <div class="items">
-        <ul>
-          <a href="index.html">Home</a>
-          <a href="safety.html"><li>Safety</li></a>
-          <a href="support.html">Support</a>
-          <a href="#"><li>Blog</li></a>
-        </ul>
+        <ul class="nav-menu">
+          <div class="logoMobile">
+            <a href="index.html"><img src="img/blacklogo.png" alt="Logo e Discord" width="124" height="34"></a>
+            <i class="fa-solid fa-xmark fa-xl close-menu"></i>
+          </div>
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="safety.html" class="nav-link">Safety</a></li>
+          <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+          <div class="buttons">
+            <button class="loginMobile"><a href="login.html">Log In</a></button>
+          </div>
+       </ul>
       </div>
       <div class="buttons">
         <button class="login"><a href="login.html">Log In</a></button>
       </div>
-    </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
     <!-- pjesa e content -->
     <div class="content">
       <div class="text">
@@ -122,11 +135,13 @@
         <div class="footer-content">
           <div class="social">
             <h1>IMAGINE A <br> PLACE</h1>
-            <a href="#"><i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i></a>
-            <a href="#"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ffffff;"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube fa-xl" style="color: #ffffff;"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok fa-xl" style="color: #ffffff;"></i></a>
+            <div class="icons">
+              <a href="#"><i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i></a>
+              <a href="#"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ffffff;"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube fa-xl" style="color: #ffffff;"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok fa-xl" style="color: #ffffff;"></i></a>
+            </div>
           </div>
           <div class="one">
             <ul>
@@ -176,11 +191,11 @@
             </ul>
           </div>
         </div>
-        <hr style="width:1200px; margin: 30px auto; border-color: #5865F2;"/>
-        <div class="bottom">
-          <a href="index.html"><img src="img/logo.png" alt="logo e discord" width="124" height="34"></a>
-          <button><a href="register.html">Sign Up</a></button>
-        </div>
+        <!-- <hr style="width:1200px; margin: 30px auto; border-color: #5865F2;"/> -->
+      </div>
+      <div class="bottom">
+        <a href="#"><img src="img/logo.png" alt="logo e discord" width="124" height="34"></a>
+        <button><a href="register.html">Sign Up</a></button>
       </div>
     </footer>
 </body>
