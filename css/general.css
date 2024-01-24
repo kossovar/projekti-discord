@@ -318,6 +318,10 @@ footer button a {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .footer-content .social {
+        grid-column: span 2;
+    }
         
 }
 
@@ -330,7 +334,7 @@ footer button a {
     }
 
     .footer-content .social {
-        grid-column: span 1;
+        grid-column: span 2;
         margin-bottom: 0;
     }
 

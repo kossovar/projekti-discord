@@ -646,7 +646,14 @@
   }
 
 }
-
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .section1-content, .section2-content, .section3-content, .section4-content {
+    justify-content: space-around;
+  }
+  .section1-content img, .section2-content img, .section3-content img, .section4-content img {
+    max-width: 400px;
+  }
+}
 
 
 @media screen and (max-width: 1200px) {
