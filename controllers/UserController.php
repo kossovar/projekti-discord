@@ -23,34 +23,59 @@ class UserController {
         $validationErrors = $this->validateUserInputs($email, $displayName, $username, $password, $birthdate);
 
         if (!empty($validationErrors)) {
-            return $validationErrors;
+            return ['success' => false, 'message' => $validationErrors];
         }
 
         // Hash the password before storing it in the database
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $registrationResult = $this->user->register($email, $displayName, $username, $hashedPassword, $birthdate);
+        $registrationResult = $this->user->register($email, $hashedPassword, $displayName, $username, $birthdate);
 
-        return $registrationResult;
+        return ['success' => true, 'message' => 'Registration successful'];;
     }
 
     public function loginUser($email, $password) {
         $loginResult = $this->user->login($email, $password);
 
-        return $loginResult;
+        if (!$loginResult) {
+            $response = ['success' => false, 'message' => 'Email or password combination is incorrect'];
+        } else {
+            $response = ['success' => true, 'message' => 'Login successful'];
+        }
+
+        return $response;
     }
 
-    private function validateUserInputs($email, $displayName, $username, $password, $birthdate) {
+    private function validateUserInputs($email, $password, $displayName, $username, $birthdate) {
         $errors = [];
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'Invalid email format';
         }
 
+        if ($this->user->isEmailTaken($email)) {
+            $errors['email'] = 'This email is already taken';
+        }
+
         if (strlen($password) < 6) {
             $errors['password'] = 'Password must be at least 6 characters';
         }
 
+        if (strlen($displayName) < 4) {
+            $errors['display_name'] = 'Display name must be at least 4 characters';
+        }
+
+        if ($this->user->isDisplayNameTaken($displayName)) {
+            $errors['display_name'] = 'This display name is already taken';
+        }
+
+        if (strlen($username) < 4) {
+            $errors['username'] = 'Username must be at least 4 characters';
+        }
+
+        if ($this->user->isUsernameTaken($username)) {
+            $errors['username'] = 'This username is already taken';
+        }
 
         return $errors;
     }

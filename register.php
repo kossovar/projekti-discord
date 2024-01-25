@@ -1,3 +1,30 @@
+<?php
+require_once ('./controllers/UserController.php');
+
+$userController = new UserController();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the user inputs from the form
+    $email = $_POST['email'];
+    $displayName = $_POST['displayName'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $birthdate = $_POST['birthdate'];
+
+    $registerResult = $userController->registerUser($email, $displayName, $username, $password, $birthdate);
+
+    // // Handle the result and return JSON response
+    if ($loginResult['success'] === true) {
+        // Redirect to index.php
+        header('Location: login.php');
+        exit ();
+    } else {
+        $error = $loginResult['message'];
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,32 +73,7 @@
         </div>
     </div>
 
-    <?php
-    require_once('./controllers/UserController.php');
-
-    $userController = new UserController();
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Get the user inputs from the form
-        $email = $_POST['email'];
-        $displayName = $_POST['displayName'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $birthdate = $_POST['birthdate'];
-
-        $registerResult = $userController->registerUser($email, $displayName, $username, $password, $birthdate);
-
-        // Handle the result and return JSON response
-        header('Content-Type: application/json');
-        if ($registerResult === true) {
-            echo json_encode(['success' => true, 'message' => 'Registration successful']);
-        } elseif (is_array($registerResult)) {
-            echo json_encode(['success' => false, 'errors' => $registerResult]);
-        } else {
-            echo json_encode(['success' => false, 'message' => $registerResult]);
-        }
-    }
-    ?>
+    
 
     <script src="js/auth.js"></script>
 </body>

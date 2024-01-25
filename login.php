@@ -1,3 +1,25 @@
+<?php
+require_once ('./controllers/UserController.php');
+
+$userController = new UserController();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the user inputs from the form
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $loginResult = $userController->loginUser($email, $password);
+
+    // // Handle the result and return JSON response
+    if ($loginResult['success'] === true) {
+        // Redirect to index.php
+        header('Location: index.php');
+        exit ();
+    } else {
+        $error = $loginResult['message'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +38,15 @@
         <form class="login-form" id="login" action="login.php" method="post">
     <h2>Welcome back!</h2>
     <p>We're so excited to see you again!</p>
+
+    <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($error)) {
+                echo '<div class="error-message">' . htmlspecialchars($error) . '</div>';
+            }
+        }
+    ?>
+
     <div class="input-group">
         <label for="email">EMAIL OR PHONE NUMBER *</label>
         <input type="text" id="email" name="email">
@@ -35,28 +66,6 @@
 
         </div>
     </div>
-
-    <?php
-    require_once('./controllers/UserController.php');
-
-    $userController = new UserController();
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Get the user inputs from the form
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $loginResult = $userController->loginUser($email, $password);
-
-        // Handle the result and return JSON response
-        header('Content-Type: application/json');
-        if ($loginResult === true) {
-            echo json_encode(['success' => true, 'message' => 'Login successful']);
-        } else {
-            echo json_encode(['success' => false, 'message' => 'Login failed']);
-        }
-    }
-    ?>
 
     <!-- <script src="./js/auth.js"></script> -->
 </body>
