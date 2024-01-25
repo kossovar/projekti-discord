@@ -25,6 +25,34 @@ class User {
         return $result->num_rows > 0;
     }
 
+    public function register($email, $displayName, $username, $password, $birthdate) {
+        // Password hashing
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        $query = "INSERT INTO users (email, display_name, username, password, birthdate) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sssss", $email, $displayName, $username, $hashedPassword, $birthdate);
+        return $stmt->execute();
+    }
+
+    public function login($username, $password) {
+        $query = "SELECT * FROM users WHERE username = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 1) {
+            $user = $result->fetch_assoc();
+            
+            // Verify the password using password_verify
+            if (password_verify($password, $user['password'])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 
 ?>
