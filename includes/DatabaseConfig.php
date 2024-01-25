@@ -10,6 +10,7 @@ $database = new Database($servername, $username, $password, $dbname);
 
 $conn = $database->getConnection();
 
+
 if ($conn) {
     return $database;
 } else {

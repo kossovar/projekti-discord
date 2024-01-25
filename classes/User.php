@@ -35,21 +35,23 @@ class User {
         return $stmt->execute();
     }
 
-    public function login($username, $password) {
-        $query = "SELECT * FROM users WHERE username = ?";
+    public function login($email, $password) {
+        $query = "SELECT * FROM users WHERE email = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("s", $username);
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
-            
+
+
             // Verify the password using password_verify
             if (password_verify($password, $user['password'])) {
                 return true;
             }
         }
+
 
         return false;
     }

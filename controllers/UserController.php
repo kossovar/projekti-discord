@@ -31,13 +31,13 @@ class UserController {
 
         $registrationResult = $this->user->register($email, $displayName, $username, $hashedPassword, $birthdate);
 
-        return $registrationResult ? "Registration successful" : "Registration failed";
+        return $registrationResult;
     }
 
-    public function loginUser($username, $password) {
-        $loginResult = $this->user->login($username, $password);
+    public function loginUser($email, $password) {
+        $loginResult = $this->user->login($email, $password);
 
-        return $loginResult ? "Login successful" : "Login failed";
+        return $loginResult;
     }
 
     private function validateUserInputs($email, $displayName, $username, $password, $birthdate) {
