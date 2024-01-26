@@ -1,3 +1,14 @@
+<?php
+  session_start();
+
+  $user = null;
+
+  if(isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+  }
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +43,25 @@
             <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
             <li class="nav-item"><a href="safety-transparency.html" class="nav-link">Transparency</a></li>
             <div class="buttons">
-              <button class="login-mobile"><a href="login.php">Log In</a></button>
+              <?php
+              if ($user) {
+                echo '<div class="profile-mobile">'. htmlspecialchars($user['display_name']) . '</div>';
+                echo '<button class="logout"><a href="logout.php">Logout</a></button>';
+              } else {
+              echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
+              }
+              ?>
             </div>
           </ul>
         </div>
         <div class="buttons">
-          <button class="login"><a href="login.php">Log In</a></button>
+        <?php
+              if ($user) {
+                echo '<div class="profile">'. htmlspecialchars($user['display_name']) . '</div>';
+              } else {
+              echo '<button class="login"><a href="login.php">Log In</a></button>';
+              }
+              ?>
         </div>
         <div class="hamburger">
           <span class="bar"></span>

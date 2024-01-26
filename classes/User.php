@@ -54,15 +54,26 @@ class User {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
 
-
             // Verify the password using password_verify
             if (password_verify($password, $user['password'])) {
+                
+                session_start();
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['user'] = $user;
+
                 return true;
             }
         }
 
 
         return false;
+    }
+
+    public function logOut()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
     }
 }
 

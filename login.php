@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // // Handle the result and return JSON response
     if ($loginResult['success'] === true) {
-        // Redirect to index.php
+
         header('Location: index.php');
         exit ();
     } else {
