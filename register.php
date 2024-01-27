@@ -1,5 +1,5 @@
 <?php
-require_once ('./controllers/UserController.php');
+require_once('./controllers/UserController.php');
 
 $userController = new UserController();
 
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($loginResult['success'] === true) {
         // Redirect to index.php
         header('Location: login.php');
-        exit ();
+        exit();
     } else {
         $error = $loginResult['message'];
     }
@@ -65,7 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <button type="submit">Continue</button>
                 <p style="font-size: 12px;">By registering, you agree to Discord's <a href="#">Terms of Service </a>and
-                    <a href="#">Privacy Policy</a>.</p>
+                    <a href="#">Privacy Policy</a>.
+                </p>
                 <div class="register">
                     <p><a href="login.php">Already have an account?</a></p>
                 </div>
@@ -73,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    
+
 
     <script src="js/auth.js"></script>
 </body>
