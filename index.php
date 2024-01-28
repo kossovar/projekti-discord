@@ -1,11 +1,19 @@
 <?php
-  session_start();
+session_start();
 
-  $user = null;
+$user = null;
 
-  if(isset($_SESSION['user'])) {
-    $user = $_SESSION['user'];
-  }
+if (isset($_SESSION['user'])) {
+  $user = $_SESSION['user'];
+}
+
+if (isset($_COOKIE['visited'])) {
+  // user-i ka vizituar faqen me pare, shfaqim nje mesazh
+  echo '<div class="welcome-message">Welcome back to the site!</div>';
+} else {
+  // user-i viziton faqen per here te pare, e krijojme nje cookie
+  setcookie('visited', 'true', time() + 3600 * 24 * 30); // cookie skadon mbrenda 30 dite
+}
 
 ?>
 
@@ -24,7 +32,7 @@
 
 <body>
   <!-- Container qe i mban krejt elementet ne qender -->
-  <div class="container">  
+  <div class="container">
     <!-- Klasa hero qe permbane pjesen e navigation bar edhe main hero -->
     <div class="hero">
       <nav class="navbar">
@@ -45,23 +53,23 @@
             <div class="buttons">
               <?php
               if ($user) {
-                echo '<div class="profile-mobile">'. htmlspecialchars($user['display_name']) . '</div>';
+                echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
                 echo '<button class="logout"><a href="logout.php">Logout</a></button>';
               } else {
-              echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
+                echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
               }
               ?>
             </div>
           </ul>
         </div>
         <div class="buttons">
-        <?php
-              if ($user) {
-                echo '<div class="profile">'. htmlspecialchars($user['display_name']) . '</div>';
-              } else {
-              echo '<button class="login"><a href="login.php">Log In</a></button>';
-              }
-              ?>
+          <?php
+          if ($user) {
+            echo '<div class="profile">' . htmlspecialchars($user['display_name']) . '</div>';
+          } else {
+            echo '<button class="login"><a href="login.php">Log In</a></button>';
+          }
+          ?>
         </div>
         <div class="hamburger">
           <span class="bar"></span>
