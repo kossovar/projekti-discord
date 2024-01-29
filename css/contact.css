@@ -1,0 +1,83 @@
+.hero {
+    background-color: #5865F2;
+    padding-bottom: 10px;
+}
+.content {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 120px 15px 120px;
+    display: flex;
+    gap: 60px;
+}
+
+.form-container { 
+    width: 100%;
+}
+.contact-img {
+    max-width: 300px;
+}
+
+.content h1 {
+    font-size: 32px;
+    margin-bottom: 42px;
+}
+
+.content form {
+    max-width: 600px;
+}
+
+.input-group ~ .input-group {
+    margin-top: 24px;
+}
+
+.input-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.input-group input {
+    font-weight: 600;
+    border-radius: 3px;
+    border: 1px solid #99aab54d;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-group textarea {
+    resize: vertical;
+    width: 100%;
+    padding: 10px;
+    min-height: 120px;
+    font-weight: 600;
+    border-radius: 3px;
+    border: 1px solid #99aab54d;
+    outline: none;
+}
+
+.content button {
+    background: #21262B;
+    font-weight: 600;
+    border: 1px solid 99aab54d;
+    border-radius: 3px;
+    max-width: 100%;
+    color: white;
+    font-size: 16px;
+    min-width: 190px;
+    padding: 0 30px;
+    line-height: 2.72;
+    margin-top: 24px;
+}
+
+/* Responsive - sm breakpoint */
+@media screen and (max-width: 640px) {
+    .content {
+        flex-direction: column-reverse;
+        padding: 40px 15px;
+        align-items: center;
+    }
+    .contact-img {
+        width: 220px;
+    }
+}

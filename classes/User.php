@@ -25,6 +25,21 @@ class User {
         return $result->num_rows > 0;
     }
 
+    public function isAdmin($userId) {
+        $query = "SELECT role FROM users WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows === 1) {
+            $userData = $result->fetch_assoc();
+            return $userData['role'] === 'admin';
+        }
+    
+        return false;
+    }
+
     public function register($email, $displayName, $username, $password, $birthdate) {
         // Password hashing
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -60,12 +75,6 @@ class User {
         return false;
     }
 
-    public function logOut()
-    {
-        session_start();
-        session_unset();
-        session_destroy();
-    }
 }
 
 ?>
