@@ -73,11 +73,14 @@ class UserController {
         if (strlen($username) < 4) {
             $errors['username'] = 'Username must be at least 4 characters';
         }
-        
-        $dateObject = DateTime::createFromFormat('Y-m-d', $birthdate);
+    
 
-        if($dateObject->format('Y-m-d') !== $birthdate) {
-            $errors['birthdate'] = 'Invalid date format';
+        if(isset($birthdate)) {
+            $dateObject = DateTime::createFromFormat('Y-m-d', $birthdate);
+
+            if($dateObject->format('Y-m-d') !== $birthdate) {
+                $errors['birthdate'] = 'Invalid date format';
+            }
         }
 
         return $errors;
