@@ -107,6 +107,7 @@ input {
 
 .logo-mobile,
 .login-mobile,
+.profile-mobile,
 .hamburger {
     display: none;
 }
@@ -186,6 +187,30 @@ footer button a {
     color: inherit;
 }
 
+.error-message {
+    background-color: #ff4a4a;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 8px;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.error-message span + span {
+    display: block;
+    margin-top: 6px;
+}
+
+.welcome-message {
+    padding: 10px 15px;
+    background-color: #5865F2;
+    color: #fff;
+    font-size: 14px;
+    font-family: Whitney;
+    border: none;
+}
+
 /* Responsive - sm breakpoint */
 @media screen and (max-width: 640px) {
     .navbar ul {
@@ -206,6 +231,10 @@ footer button a {
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .profile-mobile {
+        display: block;
     }
 
     .logo-mobile {

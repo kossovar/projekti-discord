@@ -19,16 +19,6 @@ body {
     width: 100%;
 }
 
-.error-message {
-    background-color: #ff4a4a;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 8px;
-    text-align: left;
-    width: 90%;
-    margin: 0 auto;
-}
-
 .login-box {
     width: 500px;
     height: 420px;

@@ -14,12 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $registerResult = $userController->registerUser($email, $displayName, $username, $password, $birthdate);
 
     // // Handle the result and return JSON response
-    if ($loginResult['success'] === true) {
+    if ($registerResult['success'] === true) {
         // Redirect to index.php
         header('Location: login.php');
         exit();
     } else {
-        $error = $loginResult['message'];
+        $errors = $registerResult['message'];
     }
 }
 ?>
@@ -42,6 +42,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="login-box">
             <form id="registration" action="register.php" method="post">
                 <h2>Create an account</h2>
+
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        if (isset($errors)) {
+                            echo '<div class="error-message">';
+                            foreach ($errors as $error) {
+                                echo '<span>'.htmlspecialchars($error).'</span>';
+                            }
+                            echo '</div>';
+                        }
+                    }
+                ?>
+                
                 <div class="input-group">
                     <label for="email">EMAIL*</label>
                     <input type="text" id="email" name="email">

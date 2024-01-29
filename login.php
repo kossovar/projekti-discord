@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: index.php');
         exit ();
     } else {
-        $error = $loginResult['message'];
+        $errors = $loginResult['message'];
     }
 }
 ?>
@@ -41,8 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($error)) {
-                echo '<div class="error-message">' . htmlspecialchars($error) . '</div>';
+            if (isset($errors)) {
+                echo '<div class="error-message">';
+                foreach ($errors as $error) {
+                    echo '<span>'.htmlspecialchars($error).'</span>';
+                }
+                echo '</div>';
             }
         }
     ?>

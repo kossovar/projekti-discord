@@ -1,12 +1,5 @@
 /* fillon pjesa e navbar dhe hero */
 
-.welcome-message{
-  background-color: #5865F2;
-  color: #fff;
-  font-size: 14px;
-  font-family: Whitney;
-  border: none;
-}
 .hero {
   background-image: url('../img/hero.png');
   background-size: cover;
