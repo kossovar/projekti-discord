@@ -43,9 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($errors)) {
                 echo '<div class="error-message">';
-                foreach ($errors as $error) {
-                    echo '<span>'.htmlspecialchars($error).'</span>';
-                }
+                echo '<span>'.htmlspecialchars($error).'</span>';
                 echo '</div>';
             }
         }
@@ -71,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <!-- <script src="./js/auth.js"></script> -->
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>

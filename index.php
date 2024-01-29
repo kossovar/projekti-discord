@@ -56,26 +56,20 @@ if (isset($_COOKIE['visited'])) {
               echo '<li class="nav-item admin-menu"><a href="dashboard.php" class="nav-link">Dashboard</a></li>';
             }
             ?>
-            <div class="buttons">
-              <?php
-              if ($user) {
-                echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
-                echo '<button class="logout"><a href="logout.php">Logout</a></button>';
-              } else {
-                echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
-              }
-              ?>
-            </div>
           </ul>
         </div>
         <div class="buttons">
-          <?php
-          if ($user) {
-            echo '<div class="profile">' . htmlspecialchars($user['display_name']) . '</div>';
-          } else {
-            echo '<button class="login"><a href="login.php">Log In</a></button>';
-          }
-          ?>
+          <div class="dropdown <?php echo $user ? 'd-flex' : 'd-none' ?>">
+            <button>
+              <?php echo $user ? htmlspecialchars($user['display_name']) : '' ?>
+              <i class="fa-solid fa-chevron-down fa-xs down-icon"></i>
+           </button>
+              <div class="dropdown-content">
+                  <a href="logout.php">Profile</a>
+                  <a href="logout.php">Log out</a>
+              </div>
+          </div>
+          <button class="login <?php echo !$user ?: 'd-none' ?>"><a href="login.php">Log In</a></button>
         </div>
         <div class="hamburger">
           <span class="bar"></span>

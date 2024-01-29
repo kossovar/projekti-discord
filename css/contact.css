@@ -13,6 +13,11 @@
 .form-container { 
     width: 100%;
 }
+
+.form-container .error-message {
+    max-width: 600px;
+    margin: 0 0 24px 0;
+}
 .contact-img {
     max-width: 300px;
 }
