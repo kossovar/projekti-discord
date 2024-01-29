@@ -27,8 +27,10 @@ class UserController {
             return ['success' => false, 'message' => $validationErrors];
         }
 
-        $birthdate =  DateTime::createFromFormat('Y-m-d', $birthdate);
-        $registrationResult = $this->user->register($email, $displayName, $username, $password, $birthdate);
+        $birthdate = DateTime::createFromFormat('Y-m-d', $birthdate);
+        $birthdateString = $birthdate->format('Y-m-d');
+
+        $registrationResult = $this->user->register($email, $displayName, $username, $password, $birthdateString);
 
         return ['success' => true, 'message' => 'Registration successful'];;
     }
