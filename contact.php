@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="hero">
       <nav class="navbar">
         <div class="logo">
-          <a href="index.html"><img src="./img/logo.png" alt="Logo e Discord" width="124" height="34"></a>
+          <a href="index.php"><img src="./img/logo.png" alt="Logo e Discord" width="124" height="34"></a>
         </div>
         <div class="items">
           <ul class="nav-menu">
@@ -49,19 +49,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <a href="index.html"><img src="img/blacklogo.png" alt="Logo e Discord" width="124" height="34"></a>
               <i class="fa-solid fa-xmark fa-xl close-menu"></i>
             </div>
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="safety.html" class="nav-link">Safety</a></li>
             <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
             <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
             <li class="nav-item"><a href="safety-transparency.html" class="nav-link">Transparency</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-            <div class="buttons">
-              <button class="login-mobile"><a href="login.html">Log In</a></button>
-            </div>
+            <li class="nav-item"><a href="contact.php" class="nav-link">Contact Us</a></li>
           </ul>
         </div>
         <div class="buttons">
-          <button class="login"><a href="login.html">Log In</a></button>
+        <?php
+          if ($user) {
+            echo '<div class="profile">' . htmlspecialchars($user['display_name']) . '</div>';
+            echo '<a href="logout.php" class="logout">Logout</a>';
+          } else {
+            echo '<button class="login"><a href="login.php">Log In</a></button>';
+          }
+          ?>
         </div>
         <div class="hamburger">
           <span class="bar"></span>
@@ -174,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="footer-bottom">
         <a href="index.html"><img src="img/logo.png" alt="logo e discord" width="124" height="34"></a>
-        <button><a href="register.html">Sign Up</a></button>
+        <button><a href="register.php">Sign Up</a></button>
       </div>
     </div>
   </footer>

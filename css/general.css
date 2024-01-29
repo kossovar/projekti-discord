@@ -106,6 +106,15 @@ input {
     padding: 10px 15px;
 }
 
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons .logout {
+    color: white;
+}
+
 .logo-mobile,
 .login-mobile,
 .profile-mobile,
@@ -223,58 +232,12 @@ footer button a {
     border: none;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
 .d-flex {
     display: flex;
 }
  
 .d-none {
     display: none;
-}
-
-/* Style for the button that triggers the dropdown */
-.dropdown button {
-    padding: 10px;
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.down-icon {
-    margin-left: 2px;
-    padding-top: 4px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 34px;
-    left: 0;
-    width: 100%;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* Responsive - sm breakpoint */

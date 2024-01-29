@@ -50,7 +50,7 @@ if (isset($_COOKIE['visited'])) {
             <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
             <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
             <li class="nav-item"><a href="safety-transparency.html" class="nav-link">Transparency</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            <li class="nav-item"><a href="contact.php" class="nav-link">Contact Us</a></li>
             <?php
             if ($user && $user['role'] === 'admin') {
               echo '<li class="nav-item admin-menu"><a href="dashboard.php" class="nav-link">Dashboard</a></li>';
@@ -59,17 +59,14 @@ if (isset($_COOKIE['visited'])) {
           </ul>
         </div>
         <div class="buttons">
-          <div class="dropdown <?php echo $user ? 'd-flex' : 'd-none' ?>">
-            <button>
-              <?php echo $user ? htmlspecialchars($user['display_name']) : '' ?>
-              <i class="fa-solid fa-chevron-down fa-xs down-icon"></i>
-           </button>
-              <div class="dropdown-content">
-                  <a href="logout.php">Profile</a>
-                  <a href="logout.php">Log out</a>
-              </div>
-          </div>
-          <button class="login <?php echo !$user ?: 'd-none' ?>"><a href="login.php">Log In</a></button>
+        <?php
+          if ($user) {
+            echo '<div class="profile">' . htmlspecialchars($user['display_name']) . '</div>';
+            echo '<a href="logout.php" class="logout">Logout</a>';
+          } else {
+            echo '<button class="login"><a href="login.php">Log In</a></button>';
+          }
+          ?>
         </div>
         <div class="hamburger">
           <span class="bar"></span>
