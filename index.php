@@ -51,6 +51,11 @@ if (isset($_COOKIE['visited'])) {
             <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
             <li class="nav-item"><a href="safety-transparency.html" class="nav-link">Transparency</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            <?php
+            if ($user && $user['role'] === 'admin') {
+              echo '<li class="nav-item admin-menu"><a href="dashboard.php" class="nav-link">Dashboard</a></li>';
+            }
+            ?>
             <div class="buttons">
               <?php
               if ($user) {
