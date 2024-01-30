@@ -3,7 +3,7 @@ require_once('./classes/Database.php');
 
 $servername = "localhost";
 $username = "root";
-$password = "password";
+$password = "adminharris";
 $dbname = "discord";
 
 $database = new Database($servername, $username, $password, $dbname);
