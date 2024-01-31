@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($errors)) {
                 echo '<div class="error-message">';
-                echo '<span>'.htmlspecialchars($error).'</span>';
+                echo '<span>'.htmlspecialchars($errors).'</span>';
                 echo '</div>';
             }
         }

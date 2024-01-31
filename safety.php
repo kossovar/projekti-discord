@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+$user = null;
+
+if (isset($_SESSION['user'])) {
+  $user = $_SESSION['user'];
+}
+
+if (isset($_COOKIE['visited'])) {
+  // user-i ka vizituar faqen me pare, shfaqim nje mesazh
+  echo '<div class="welcome-message">Welcome back to the site!</div>';
+} else {
+  // user-i viziton faqen per here te pare, e krijojme nje cookie
+  setcookie('visited', 'true', time() + 3600 * 24 * 30); // cookie skadon mbrenda 30 dite
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,28 +33,47 @@
   <div class="hero">
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="./img/logo.png" alt="Logo e Discord" width="124" height="34"></a>
+        <a href="index.php"><img src="./img/logo.png" alt="Logo e Discord" width="124" height="34"></a>
       </div>
       <div class="items">
         <ul class="nav-menu">
           <div class="logo-mobile">
-            <a href="index.html"><img src="img/blacklogo.png" alt="Logo e Discord" width="124" height="34"></a>
+            <a href="index.php"><img src="img/blacklogo.png" alt="Logo e Discord" width="124" height="34"></a>
             <i class="fa-solid fa-xmark fa-xl close-menu"></i>
           </div>
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="safety.html" class="nav-link">Safety</a></li>
-          <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
-          <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
-          <li class="nav-item"><a href="safety-transparency.html" class="nav-link">Transparency</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-          <div class="buttons">
-            <button class="login-mobile"><a href="login.html">Log In</a></button>
-          </div>
+          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="safety.php" class="nav-link">Safety</a></li>
+          <li class="nav-item"><a href="support.php" class="nav-link">Support</a></li>
+          <li class="nav-item"><a href="privacy.php" class="nav-link">Privacy</a></li>
+          <li class="nav-item"><a href="safety-transparency.php" class="nav-link">Transparency</a></li>
+          <li class="nav-item"><a href="contact.php" class="nav-link">Contact Us</a></li>
+          <?php
+              if ($user && $user['role'] === 'admin') {
+                echo '<li class="nav-item admin-menu"><a href="dashboard.php" class="nav-link">Dashboard</a></li>';
+              }
+            ?>
+            <div class="buttons-mobile">
+                <?php
+                  if ($user) {
+                      echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
+                      echo '<button class="logout-mobile"><a href="logout.php">Logout</a></button>';
+                  } else {
+                      echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
+                  }
+                ?>
+            </div>
         </ul>
       </div>
       <div class="buttons">
-        <button class="login"><a href="login.html">Log In</a></button>
-      </div>
+          <?php
+            if ($user) {
+              echo '<div class="profile">' . htmlspecialchars($user['display_name']) . '</div>';
+              echo '<a href="logout.php" class="logout">Logout</a>';
+            } else {
+              echo '<button class="login"><a href="login.php">Log In</a></button>';
+            }
+            ?>
+        </div>
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -212,7 +250,7 @@
       </div>
       <div class="footer-bottom">
         <a href="#"><img src="img/logo.png" alt="logo e discord" width="124" height="34"></a>
-        <button><a href="register.html">Sign Up</a></button>
+        <button><a href="register.php">Sign Up</a></button>
       </div>
     </footer>
 </body>

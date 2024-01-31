@@ -45,32 +45,33 @@ $users = $userController->getAllUsers();
             <i class="fa-solid fa-xmark fa-xl close-menu"></i>
           </div>
           <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="safety.html" class="nav-link">Safety</a></li>
-          <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
-          <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
-          <li class="nav-item"><a href="safety-transparency.html" class="nav-link">Transparency</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+          <li class="nav-item"><a href="safety.php" class="nav-link">Safety</a></li>
+          <li class="nav-item"><a href="support.php" class="nav-link">Support</a></li>
+          <li class="nav-item"><a href="privacy.php" class="nav-link">Privacy</a></li>
+          <li class="nav-item"><a href="safety-transparency.php" class="nav-link">Transparency</a></li>
+          <li class="nav-item"><a href="contact.php" class="nav-link">Contact Us</a></li>
           <?php
           if ($user && $user['role'] === 'admin') {
             echo '<li class="nav-item admin-menu"><a href="dashboard.php" class="nav-link">Dashboard</a></li>';
           }
           ?>
-          <div class="buttons">
-            <?php
-            if ($user) {
-              echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
-              echo '<button class="logout"><a href="logout.php">Logout</a></button>';
-            } else {
-              echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
-            }
-            ?>
-          </div>
+          <div class="buttons-mobile">
+                <?php
+                  if ($user) {
+                      echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
+                      echo '<button class="logout-mobile"><a href="logout.php">Logout</a></button>';
+                  } else {
+                      echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
+                  }
+                ?>
+            </div>
         </ul>
       </div>
       <div class="buttons">
         <?php
         if ($user) {
           echo '<div class="profile">' . htmlspecialchars($user['display_name']) . '</div>';
+          echo '<a href="logout.php" class="logout">Logout</a>';
         } else {
           echo '<button class="login"><a href="login.php">Log In</a></button>';
         }
