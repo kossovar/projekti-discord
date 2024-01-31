@@ -12,6 +12,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
   exit;
 }
 
+require_once('controllers/UserController.php');
+$userController = new UserController();
+$users = $userController->getAllUsers();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,12 +86,34 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
   </div>
   <!-- pjesa kryesore e dashboard -->
   <div class="main">
-    <div class="createNew">
-      <button type="button" class="newUser"><a href="create.php">+ New User</a></button>
-    </div>
-    <?php
-    include('./read.php'); // nga ketu e thirrim read.php
-    ?>
+    <table>
+      <a href="create_user.php" class="newUser">Add New User</a>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Display Name</th>
+          <th>Username</th>
+          <th>Birthdate</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($users as $user) : ?>
+          <tr>
+            <td><?= htmlspecialchars($user['email']) ?></td>
+            <td><?= htmlspecialchars($user['display_name']) ?></td>
+            <td><?= htmlspecialchars($user['username']) ?></td>
+            <td><?= htmlspecialchars($user['birthdate']) ?></td>
+            <td><?= htmlspecialchars($user['role']) ?></td>
+            <td>
+              <a href="edit_user.php?id=<?= $user['id'] ?>">Edit</a> |
+              <a href="delete_user.php?id=<?= $user['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
   </div>
   <!-- pjesa kryesore e dashboard mbaron ketu -->
   <footer>
