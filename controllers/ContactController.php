@@ -44,11 +44,11 @@ class ContactController
             $errors['email'] = 'Invalid email format';
         }
 
-        if (empty($email)) {
+        if (empty(trim($email))) {
             $errors['email'] = 'Email cannot be empty';
         }
 
-        if (empty($subject)) {
+        if (empty(trim($subject))) {
             $errors['subject'] = 'Subject cannot be empty';
         }
 
@@ -56,7 +56,7 @@ class ContactController
             $errors['subject'] = 'Subject cannot be less than 3 characters';
         }
 
-        if (empty($description)) {
+        if (empty(trim($description))) {
             $errors['description'] = 'Description cannot be empty';
         }
 

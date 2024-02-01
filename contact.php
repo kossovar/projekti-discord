@@ -136,8 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
           <div class="input-group">
             <label for="description">Description</label>
-            <textarea name="description" id="description">
-            </textarea>
+            <textarea name="description" id="description"></textarea>
           </div>
           <button type="submit">Submit</button>
         </form>
