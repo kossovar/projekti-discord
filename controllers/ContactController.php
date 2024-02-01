@@ -62,4 +62,18 @@ class ContactController
 
         return $errors;
     }
+
+    public function deleteMessage($id)
+    {
+        $stmt = $this->conn->prepare("DELETE FROM contact_messages WHERE id = ?");
+        $stmt->bind_param("i", $id);
+
+        if ($stmt->execute()) {
+            $stmt->close();
+            return ['success' => true, 'message' => 'Message deleted successfully'];
+        } else {
+            $stmt->close();
+            return ['success' => false, 'message' => 'An error occurred during message deletion'];
+        }
+    }
 }

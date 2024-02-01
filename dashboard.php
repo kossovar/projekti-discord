@@ -13,8 +13,15 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 }
 
 require_once('controllers/UserController.php');
+require_once('classes/ContactMessage.php');
+
 $userController = new UserController();
 $users = $userController->getAllUsers();
+
+$contactMessage = new ContactMessage($conn);
+// i marrim te gjitha mesazhet
+$messages = $contactMessage->getAllMessages();
+
 
 ?>
 <!DOCTYPE html>
@@ -56,15 +63,15 @@ $users = $userController->getAllUsers();
           }
           ?>
           <div class="buttons-mobile">
-                <?php
-                  if ($user) {
-                      echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
-                      echo '<button class="logout-mobile"><a href="logout.php">Logout</a></button>';
-                  } else {
-                      echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
-                  }
-                ?>
-            </div>
+            <?php
+            if ($user) {
+              echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
+              echo '<button class="logout-mobile"><a href="logout.php">Logout</a></button>';
+            } else {
+              echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
+            }
+            ?>
+          </div>
         </ul>
       </div>
       <div class="buttons">
@@ -115,6 +122,33 @@ $users = $userController->getAllUsers();
         <?php endforeach; ?>
       </tbody>
     </table>
+    <div class="messages">
+      <h2>User Messages</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Received At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($messages as $message) : ?>
+            <tr>
+              <td><?= htmlspecialchars($message['email']) ?></td>
+              <td><?= htmlspecialchars($message['subject']) ?></td>
+              <td><?= htmlspecialchars($message['description']) ?></td>
+              <td><?= htmlspecialchars($message['created_at']) ?></td>
+              <td>
+                <a href="delete_message.php?id=<?= $message['id'] ?>" onclick="return confirm('Are you sure?')">Delete Message</a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
   </div>
   <!-- pjesa kryesore e dashboard mbaron ketu -->
   <footer>
@@ -185,6 +219,6 @@ $users = $userController->getAllUsers();
     </div>
   </footer>
 </body>
-<script src="./js/main.js"></script>
+<!-- <script src="./js/main.js"></script> -->
 
 </html>
