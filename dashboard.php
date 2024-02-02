@@ -56,6 +56,7 @@ $messages = $contactMessage->getAllMessages();
           <li class="nav-item"><a href="support.php" class="nav-link">Support</a></li>
           <li class="nav-item"><a href="privacy.php" class="nav-link">Privacy</a></li>
           <li class="nav-item"><a href="safety-transparency.php" class="nav-link">Transparency</a></li>
+          <li class="nav-item"><a href="servers.php" class="nav-link">Servers</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link">Contact Us</a></li>
           <?php
           if ($user && $user['role'] === 'admin') {
