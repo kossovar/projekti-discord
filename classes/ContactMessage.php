@@ -9,7 +9,7 @@ class ContactMessage
         $this->conn = $conn;
     }
 
-    // Insert a new contact message into db
+    // shtojme nje contact mesazh ne databaze
     public function insertMessage($email, $subject, $description)
     {
         $stmt = $this->conn->prepare("INSERT INTO contact_messages (email, subject, description) VALUES (?, ?, ?)");
@@ -22,7 +22,7 @@ class ContactMessage
         }
     }
 
-    // Retrieve all contact messages from db
+    // i marrim te gjitha mesazhet nga db
     public function getAllMessages()
     {
         $result = $this->conn->query("SELECT * FROM contact_messages ORDER BY created_at DESC");

@@ -96,7 +96,9 @@ $messages = $contactMessage->getAllMessages();
   <!-- pjesa kryesore e dashboard -->
   <div class="main">
     <table>
-      <a href="create_user.php" class="newUser">Add New User</a>
+      <div class=" buttonDiv">
+        <a href="create_user.php" class="newUser">Add New User</a>
+      </div>
       <thead>
         <tr>
           <th>Email</th>

@@ -10,10 +10,11 @@ class ContactController
 
     public function __construct()
     {
-        global $conn;  // Use the connection established in DatabaseConfig.php
+        // e perdorim lidhjen e krijuar ne DatabaseConfig.php
+        global $conn;
         $this->conn = $conn;
 
-        // Check if the connection was successful
+        // shikojm nese lidhja eshte bere me sukses
         if (!$this->conn) {
             die("Connection failed!");
         }

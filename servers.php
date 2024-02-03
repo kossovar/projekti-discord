@@ -98,7 +98,6 @@ $servers = $serverController->getAllServers();
     <div class="server-container">
       <?php if ($user) : ?>
         <div class="create-server">
-          <!-- Anchor Tag Styled as a Button -->
           <a href="create_server.php" class="serverButton">Create Your Server</a>
         </div>
       <?php endif; ?>
@@ -112,7 +111,6 @@ $servers = $serverController->getAllServers();
             <h2><?= htmlspecialchars($server['title']) ?></h2>
             <p><?= htmlspecialchars($server['description']) ?></p>
             <p>Created by: <?= htmlspecialchars($server['creator_name']) ?></p>
-            <!-- Check if the current user is the creator or an admin -->
             <div class="buttons">
               <?php if ($user && ($user['id'] == $server['user_id'] || $user['role'] === 'admin')) : ?>
                 <button onclick="window.location.href='edit_server.php?id=<?= $server['id'] ?>'">Edit</button>

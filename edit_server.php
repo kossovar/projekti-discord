@@ -6,8 +6,8 @@ if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
 }
 
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header('Location: index.php'); // user-at qe nuk jane admin kthehen ne homepage
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php'); // Redirect users who are not logged in to the login page
     exit;
 }
 
@@ -16,19 +16,18 @@ $serverController = new ServerController();
 $serverId = $_GET['id'];
 $server = $serverController->getServerById($serverId);
 
-// Check if the server exists
+// shikojm nese serveri ekziston
 if (!$server) {
     echo "Server not found.";
     exit;
 }
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $imageUrl = $_POST['image_url'];
 
-    // Simple validation
+    //  validimi
     if (!empty($title) && !empty($description) && !empty($imageUrl)) {
         $success = $serverController->updateServer($serverId, $title, $description, $imageUrl);
         if ($success) {

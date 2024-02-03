@@ -7,26 +7,24 @@ if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
 }
 
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header('Location: index.php'); // user-at qe nuk jane admin kthehen ne homepage
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php'); // Redirect users who are not logged in to the login page
     exit;
 }
 
 require_once('controllers/ServerController.php');
 $serverController = new ServerController();
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $imageUrl = $_POST['image_url'];
-    $userId = $_SESSION['user']['id']; // Assuming the user's ID is stored in session
+    $userId = $_SESSION['user']['id'];
 
-    // Simple validation (You should implement more robust validation)
     if (!empty($title) && !empty($description) && !empty($imageUrl)) {
         $success = $serverController->createServer($userId, $title, $description, $imageUrl);
         if ($success) {
-            // Redirect to servers page or display a success message
+            // redirect perseri ne servers.php pasi behet true
             header('Location: servers.php');
             exit;
         } else {
@@ -40,8 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/style.css">
@@ -50,8 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script defer src="https://kit.fontawesome.com/473661cbea.js" crossorigin="anonymous"></script>
     <title>Create Server | Discord Clone</title>
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
         <!-- navbari -->
         <nav class="navbar">
             <div class="logo">
@@ -75,15 +75,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     }
                     ?>
                     <div class="buttons-mobile">
-                <?php
-                  if ($user) {
-                      echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
-                      echo '<button class="logout-mobile"><a href="logout.php">Logout</a></button>';
-                  } else {
-                      echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
-                  }
-                ?>
-            </div>
+                        <?php
+                        if ($user) {
+                            echo '<div class="profile-mobile">' . htmlspecialchars($user['display_name']) . '</div>';
+                            echo '<button class="logout-mobile"><a href="logout.php">Logout</a></button>';
+                        } else {
+                            echo '<button class="login-mobile"><a href="login.php">Log In</a></button>';
+                        }
+                        ?>
+                    </div>
                 </ul>
             </div>
             <div class="buttons">
@@ -123,70 +123,71 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </body>
 <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="social">
-                    <h1>IMAGINE A <br> PLACE</h1>
-                    <div class="icons">
-                        <a href="#"><i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i></a>
-                        <a href="#"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ffffff;"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube fa-xl" style="color: #ffffff;"></i></a>
-                        <a href="#"><i class="fa-brands fa-tiktok fa-xl" style="color: #ffffff;"></i></a>
-                    </div>
-                </div>
-                <div class="one">
-                    <ul>
-                        <p>Product</p>
-                        <li>Download</li>
-                        <li>Nitro</li>
-                        <li>Status</li>
-                        <li>App Directory</li>
-                    </ul>
-                </div>
-                <div class="two">
-                    <p>Company</p>
-                    <ul>
-                        <li>About</li>
-                        <li>Jobs</li>
-                        <li>Brand</li>
-                        <li>Newsroom</li>
-                        <li>Fall Release</li>
-                    </ul>
-                </div>
-                <div class="three">
-                    <p>Resources</p>
-                    <ul>
-                        <li>College</li>
-                        <li>Support</li>
-                        <li>Safety</li>
-                        <li>Blog</li>
-                        <li>Feedback</li>
-                        <li>StreamKit</li>
-                        <li>Creators</li>
-                        <li>Community</li>
-                        <li>Developers</li>
-                        <li>Gaming</li>
-                        <li>Official 3rd Party Merch</li>
-                    </ul>
-                </div>
-                <div class="four">
-                    <p>Policies</p>
-                    <ul>
-                        <li>Terms</li>
-                        <li>Privacy</li>
-                        <li>Cookie Settings</li>
-                        <li>Guidelines</li>
-                        <li>Acknowledgements</li>
-                        <li>Liscenses</li>
-                        <li>Company Information</li>
-                    </ul>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="social">
+                <h1>IMAGINE A <br> PLACE</h1>
+                <div class="icons">
+                    <a href="#"><i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ffffff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-xl" style="color: #ffffff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok fa-xl" style="color: #ffffff;"></i></a>
                 </div>
             </div>
+            <div class="one">
+                <ul>
+                    <p>Product</p>
+                    <li>Download</li>
+                    <li>Nitro</li>
+                    <li>Status</li>
+                    <li>App Directory</li>
+                </ul>
+            </div>
+            <div class="two">
+                <p>Company</p>
+                <ul>
+                    <li>About</li>
+                    <li>Jobs</li>
+                    <li>Brand</li>
+                    <li>Newsroom</li>
+                    <li>Fall Release</li>
+                </ul>
+            </div>
+            <div class="three">
+                <p>Resources</p>
+                <ul>
+                    <li>College</li>
+                    <li>Support</li>
+                    <li>Safety</li>
+                    <li>Blog</li>
+                    <li>Feedback</li>
+                    <li>StreamKit</li>
+                    <li>Creators</li>
+                    <li>Community</li>
+                    <li>Developers</li>
+                    <li>Gaming</li>
+                    <li>Official 3rd Party Merch</li>
+                </ul>
+            </div>
+            <div class="four">
+                <p>Policies</p>
+                <ul>
+                    <li>Terms</li>
+                    <li>Privacy</li>
+                    <li>Cookie Settings</li>
+                    <li>Guidelines</li>
+                    <li>Acknowledgements</li>
+                    <li>Liscenses</li>
+                    <li>Company Information</li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <a href="#"><img src="img/logo.png" alt="logo e discord" width="124" height="34"></a>
-            <button><a href="register.php">Sign Up</a></button>
-        </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <a href="#"><img src="img/logo.png" alt="logo e discord" width="124" height="34"></a>
+        <button><a href="register.php">Sign Up</a></button>
+    </div>
+</footer>
+
 </html>
