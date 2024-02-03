@@ -22,7 +22,7 @@ This project is a clone of Discord, focusing on creating a simplified version th
 
 To get started with this project, clone the repository and navigate to the project directory. You can then open the `index.php` file in a browser to view the application.
 
-Credits:
+## Credits:
 
 A huge thank you to our university teachers and assistants for their guidance and support throughout this project. Their expertise and encouragement were invaluable in our learning journey.
 
