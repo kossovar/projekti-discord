@@ -30,10 +30,12 @@ class UserController
             return ['success' => false, 'message' => $validationErrors];
         }
 
-        $birthdate = DateTime::createFromFormat('Y-m-d', $birthdate);
-        $birthdateString = $birthdate->format('Y-m-d');
+        if($birthdate) {
+            $birthdate = DateTime::createFromFormat('Y-m-d', $birthdate);
+            $birthdate = $birthdate->format('Y-m-d');
+        }
 
-        $this->user->register($email, $displayName, $username, $password, $birthdateString);
+        $this->user->register($email, $displayName, $username, $password, $birthdate);
 
         return ['success' => true, 'message' => 'Registration successful'];
     }
@@ -79,8 +81,7 @@ class UserController
             $errors['username'] = 'Username must be at least 4 characters';
         }
 
-
-        if (isset($birthdate)) {
+        if (isset($birthdate) && !empty($birthdate)) {
             $dateObject = DateTime::createFromFormat('Y-m-d', $birthdate);
 
             if ($dateObject->format('Y-m-d') !== $birthdate) {

@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <div class="login-box">
-            <form class="login-form" id="login" action="login.php" method="post">
+            <form name="loginForm" class="login-form" id="login" action="login.php" method="post">
                 <h2>Welcome back!</h2>
                 <p>We're so excited to see you again!</p>
 
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <!-- <script src="./js/auth.js"></script> -->
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>

@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <div class="login-box">
-            <form id="registration" action="register.php" method="post">
+            <form name="registerForm" id="registration" action="register.php" method="post">
                 <h2>Create an account</h2>
 
                 <?php
