@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // regex per cdo input
-    let displayNameRegex = /^[a-zA-Z]$/;
-    let usernameRegex = /^[a-zA-Z]$/;
+    let displayNameRegex =/^[a-zA-Z]{3,}$/;
+    let usernameRegex = /^[a-zA-Z]{3,}$/;
     let emailRegex = /^[a-zA-Z0-9._-]+@[a-z.]+.[a-z]{2,}$/;
     let passwordRegex = /^[a-zA-Z]{8,}$/;
   
