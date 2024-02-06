@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     // regex per cdo input
-    let displayNameRegex = /^[A-Z][a-zA-Z]*$/;
-    let usernameRegex = /^[a-zA-Z0-9]{8,15}$/;
-    let emailRegex = /^[a-zA-Z0-9._-]+@[a-z.]+\.[a-z]{2,}$/;
+    let displayNameRegex = /^[a-zA-Z]$/;
+    let usernameRegex = /^[a-zA-Z]$/;
+    let emailRegex = /^[a-zA-Z0-9._-]+@[a-z.]+.[a-z]{2,}$/;
     let passwordRegex = /^[a-zA-Z]{8,}$/;
   
     function registerValidation(event) {
